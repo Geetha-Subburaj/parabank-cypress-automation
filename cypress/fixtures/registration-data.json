@@ -1,0 +1,78 @@
+
+{
+  "validUser": {
+    "firstName": "Test",
+    "lastName": "Customer",
+    "address": "100 Test Street",
+    "city": "Test City",
+    "state": "CA",
+    "zipCode": "90001",
+    "phone": "5551234567",
+    "ssn": "123456789",
+    "usernamePrefix": "testuser",
+    "password": "Test@12345"
+  },
+  "duplicateUsername": "existinguser",
+  "requiredFields": [
+    {
+      "name": "First Name",
+      "key": "firstName",
+      "selector": "[id='customer.firstName']",
+      "errorSelector": "[id='customer.firstName.errors']"
+    },
+    {
+      "name": "Last Name",
+      "key": "lastName",
+      "selector": "[id='customer.lastName']",
+      "errorSelector": "[id='customer.lastName.errors']"
+    },
+    {
+      "name": "Address",
+      "key": "address",
+      "selector": "[id='customer.address.street']",
+      "errorSelector": "[id='customer.address.street.errors']"
+    },
+    {
+      "name": "City",
+      "key": "city",
+      "selector": "[id='customer.address.city']",
+      "errorSelector": "[id='customer.address.city.errors']"
+    },
+    {
+      "name": "State",
+      "key": "state",
+      "selector": "[id='customer.address.state']",
+      "errorSelector": "[id='customer.address.state.errors']"
+    },
+    {
+      "name": "Zip Code",
+      "key": "zipCode",
+      "selector": "[id='customer.address.zipCode']",
+      "errorSelector": "[id='customer.address.zipCode.errors']"
+    },
+    {
+      "name": "Phone",
+      "key": "phone",
+      "selector": "[id='customer.phoneNumber']",
+      "errorSelector": "#customer\\\\.phoneNumber\\\\.errors"
+    },
+    {
+      "name": "SSN",
+      "key": "ssn",
+      "selector": "[id='customer.ssn']",
+      "errorSelector": "[id='customer.ssn.errors']"
+    },
+    {
+      "name": "Username",
+      "key": "username",
+      "selector": "[id='customer.username']",
+      "errorSelector": "[id='customer.username.errors']"
+    },
+    {
+      "name": "Password",
+      "key": "password",
+      "selector": "[id='customer.password']",
+      "errorSelector": "[id='customer.password.errors']"
+    }
+  ]
+}

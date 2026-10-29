@@ -1,0 +1,11 @@
+import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
+import LoginPage from '../../../Pages/UI/login.page';
+import UIActions from '../../../support/utils/ui-actions';
+Given('the user is on the ParaBank login page', () => LoginPage.visit());
+When('the user enters valid username and password', () => cy.env(['PARABANK_USERNAME','PARABANK_PASSWORD']).then(({PARABANK_USERNAME,PARABANK_PASSWORD}) => { if(typeof PARABANK_USERNAME!=='string'||!PARABANK_USERNAME||typeof PARABANK_PASSWORD!=='string'||!PARABANK_PASSWORD) throw new Error('Login credentials are missing from environment configuration.'); LoginPage.enterUsername(PARABANK_USERNAME); LoginPage.enterPassword(PARABANK_PASSWORD); }));
+When('the user enters an invalid username {string}', (username:string) => LoginPage.enterUsername(username));
+When('the user enters an invalid password {string}', (password:string) => LoginPage.enterPassword(password));
+Then('the user is redirected to the Accounts Overview page', () => cy.url().should('include','overview.htm'));
+Then('an error message containing {string} is displayed', (message:string) => LoginPage.verifyLoginError(message));
+Then('the {string} link is visible on the login page', (label:string) => cy.contains('a',label).should('be.visible'));
+Then('the user is navigated to the lookup page', () => cy.url().should('include','lookup.htm'));

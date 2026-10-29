@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Dependencies
+node_modules/
+
+# Cypress execution artifacts
+cypress/screenshots/
+cypress/videos/
+
+# Generated reports
+reports/cucumber/
+reports/html/
+
+# Operating system
+.DS_Store
+Thumbs.db

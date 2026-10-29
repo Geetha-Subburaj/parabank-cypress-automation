@@ -1,0 +1,39 @@
+{
+  "name": "parabank-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+  "test": "cypress run",
+  "test:report": "node scripts/run-tests-with-report.cjs",
+  "test:feature": "node scripts/run-tests-with-report.cjs",
+  "report:html": "node scripts/generate-cucumber-report.cjs"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^28.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "cypress": "^16.2.0",
+    "cypress-mochawesome-reporter": "^5.0.0",
+    "dotenv": "^18.0.8",
+    "esbuild": "^0.28.2",
+    "multiple-cucumber-html-reporter": "^4.5.0",
+    "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "cypress@16.2.0": true,
+    "esbuild@0.28.2": true
+  },
+ "cypress-cucumber-preprocessor": {
+  "stepDefinitions": [
+    "cypress/e2e/step_definitions/**/*.ts"
+  ],
+  "json": {
+    "enabled": true,
+    "output": "reports/cucumber/cucumber-report.json"
+  }
+}
+}
